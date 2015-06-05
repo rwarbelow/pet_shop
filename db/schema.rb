@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150604160922) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "pets", force: :cascade do |t|
     t.string   "name"
     t.string   "breed"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 20150604160922) do
     t.integer  "store_id"
   end
 
-  add_index "pets", ["store_id"], name: "index_pets_on_store_id"
+  add_index "pets", ["store_id"], name: "index_pets_on_store_id", using: :btree
 
   create_table "stores", force: :cascade do |t|
     t.string   "name"
@@ -32,4 +35,5 @@ ActiveRecord::Schema.define(version: 20150604160922) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "pets", "stores"
 end
