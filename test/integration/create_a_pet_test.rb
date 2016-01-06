@@ -6,10 +6,10 @@ class CreateAPetTest < ActionDispatch::IntegrationTest
 
     visit store_path(store)
     click_link "Add new pet"
-    
+
     fill_in "Name", with: "Bernie"
     fill_in "Breed", with: "Golden Doodle"
-    fill_in "Gender", with: "Male"
+    fill_in "Sex", with: "Male"
     click_button "Create Pet"
 
     assert_equal store_path(store), current_path
