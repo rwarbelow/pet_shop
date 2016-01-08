@@ -4,7 +4,7 @@ class PetTest < ActiveSupport::TestCase
   test "pet belongs to a store" do
     pet = Pet.new(name: "Bernie", breed: "Golden Doodle", gender: "M")
 
-    assert pet.valid?, "Must assign a Store."
+    assert pet.valid?
     assert pet.respond_to?(:store)
   end
 end
