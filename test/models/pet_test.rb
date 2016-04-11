@@ -1,8 +1,6 @@
 require 'test_helper'
 
 class PetTest < ActiveSupport::TestCase
-  should belong_to(:store)
-
   test "pet has total adoption fee" do
     store = Store.new(
       name: "Richard's Pet Store", 
@@ -13,7 +11,6 @@ class PetTest < ActiveSupport::TestCase
     pet = store.pets.new(
       name: "Bernie", 
       breed: "Golden Doodle", 
-      gender: "M", 
       adoption_fee: 30
     )
 

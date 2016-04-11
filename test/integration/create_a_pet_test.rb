@@ -13,8 +13,7 @@ class CreateAPetTest < ActionDispatch::IntegrationTest
     
     fill_in "Name",         with: "Bernie"
     fill_in "Breed",        with: "Golden Doodle"
-    fill_in "Gender",       with: "Male"
-    fill_in "Adoption Fee", with: 45
+    fill_in "Adoption fee", with: 45
     click_button "Create Pet"
 
     assert_equal store_path(store), current_path
