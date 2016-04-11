@@ -4,6 +4,7 @@ class CreatePets < ActiveRecord::Migration
       t.string :name
       t.string :breed
       t.string :gender
+      t.integer :adoption_fee
 
       t.timestamps null: false
     end

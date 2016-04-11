@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(version: 20150604160922) do
     t.string   "name"
     t.string   "breed"
     t.string   "gender"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "adoption_fee"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "store_id"
   end
 
@@ -31,8 +32,9 @@ ActiveRecord::Schema.define(version: 20150604160922) do
     t.string   "name"
     t.string   "city"
     t.string   "state"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "base_adoption_fee"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   add_foreign_key "pets", "stores"
